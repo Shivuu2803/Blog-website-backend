@@ -16,7 +16,10 @@ const fs = require("fs");
 const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS);
 const secret = process.env.JWT_SECRET;
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://tiny-frangollo-7f6d3d.netlify.app'],
+  credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
