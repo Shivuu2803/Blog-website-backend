@@ -17,8 +17,7 @@ const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS);
 const secret = process.env.JWT_SECRET;
 
 app.use(cors({
-  origin: ['https://tiny-frangollo-7f6d3d.netlify.app'],
-  credentials: true,
+  origin: '*'
 }));
 app.use(express.json());
 app.use(cookieParser());
